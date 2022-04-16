@@ -1,4 +1,4 @@
-import { LessonsRepository } from "../repositories/LessonsRepository";
+import { LessonsRepository } from '../repositories/LessonsRepository';
 
 interface ICreateLessonRequest {
   title: string,
@@ -7,13 +7,14 @@ interface ICreateLessonRequest {
 
 export class CreateLesson {
   constructor(
-    private lessonsRepository: LessonsRepository
-  ){}
-  async execute({title, description}: ICreateLessonRequest) {
-    if(!title) {
+    private lessonsRepository: LessonsRepository,
+  ) {}
+
+  async execute({ title, description }: ICreateLessonRequest) {
+    if (!title) {
       throw new Error('title is required');
     }
 
-    await this.lessonsRepository.create({title, description});
-  };
+    await this.lessonsRepository.create({ title, description });
+  }
 }
