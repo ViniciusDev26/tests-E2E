@@ -26,7 +26,7 @@ jobs:
       - run: npm run build
 
       - name: Install Railway
-        run: npm i -g @railway/cli
+        run: curl -fsSL https://railway.app/install.sh | sh
 
       - name: Deploy
         run: railway up -e production -s tests-E2E
