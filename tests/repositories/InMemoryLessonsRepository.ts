@@ -1,6 +1,6 @@
-import { Lesson } from "../../src/entities/Lesson";
-import { ICreateLesson } from "../../src/dtos/ILessons";
-import { LessonsRepository } from "../../src/repositories/LessonsRepository";
+import { Lesson } from '../../src/entities/Lesson';
+import { ICreateLesson } from '../../src/dtos/ILessons';
+import { LessonsRepository } from '../../src/repositories/LessonsRepository';
 
 export class InMemoryLessonsRepository implements LessonsRepository {
   private lessons: Lesson[] = [];
@@ -9,7 +9,7 @@ export class InMemoryLessonsRepository implements LessonsRepository {
     return this.lessons;
   }
 
-  async create({title, description}: ICreateLesson) {
+  async create({ title, description }: ICreateLesson) {
     const newLesson = new Lesson({ title, description });
 
     this.lessons.push(newLesson);
