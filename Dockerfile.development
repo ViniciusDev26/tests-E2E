@@ -8,9 +8,6 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build
-RUN yarn prisma migrate deploy
-
 EXPOSE 3333
 
 CMD [ "yarn", "development" ]
