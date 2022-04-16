@@ -3,8 +3,6 @@ name: Test Production Application
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   testAndDeploy:
