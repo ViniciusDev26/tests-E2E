@@ -12,7 +12,7 @@ RUN yarn install
 COPY . .
 
 RUN yarn build
-RUN yarn prima generate
+RUN yarn prisma generate
 RUN yarn prisma migrate deploy
 
 EXPOSE 3333
