@@ -10,6 +10,8 @@ export const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (request, response) => response.send('hello gaby'));
+
 app.post('/lessons', async (request, response) => {
   const { title, description } = request.body;
 
