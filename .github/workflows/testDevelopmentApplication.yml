@@ -1,13 +1,11 @@
 name: Test Application
 
 on:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
+    branches: [development]
 
 jobs:
-  test:
+  test-development:
     runs-on: ubuntu-latest
 
     strategy:
