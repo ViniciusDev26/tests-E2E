@@ -1,11 +1,14 @@
 import "dotenv/config";
+
 import express from "express";
+import cors from "cors";
 import { PrismaLessonsRepository } from "./repositories/prisma/PrismaLessonsRepository";
 import { CreateLesson } from "./services/CreateLesson";
 
 export const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/lessons', async (request, response) => {
   const { title, description } = request.body;
